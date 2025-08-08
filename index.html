@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طبیب دیجیتال - سلامت آفلاین</title>
+    <style>
+        :root {
+            --primary: #00a896;
+            --secondary: #02c39a;
+            --accent: #f0f3bd;
+            --dark: #05668d;
+            --light: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            padding-bottom: 70px;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        
+        .nav-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 0.75rem;
+            flex: 1;
+        }
+        
+        .nav-btn i {
+            font-size: 1.3rem;
+            margin-bottom: 3px;
+        }
+        
+        .nav-btn.active {
+            color: var(--primary);
+        }
+        
+        .section {
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .card i {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .card-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .announcement {
+            background: #fff8e1;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-right: 4px solid var(--primary);
+            position: relative;
+        }
+        
+        .close-announcement {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span>🌿</span>
+                طبیب دیجیتال
+            </div>
+        </header>
+        
+        <main>
+            <!-- پیام همگانی -->
+            <div id="announcement-box" class="announcement" style="display: none;">
+                <div class="close-announcement" onclick="hideAnnouncement()">✕</div>
+                <div id="announcement-text"></div>
+            </div>
+            
+            <!-- بخش سلامت -->
+            <div class="section active" id="health-section">
+                <div class="grid-container">
+                    <a href="b1.html" class="card"><span>💉</span><div class="card-title">دیابت</div></a>
+                    <a href="b2.html" class="card"><span>❤️</span><div class="card-title">فشار خون</div></a>
+                    <a href="b3.html" class="card"><span>🧠</span><div class="card-title">اعصاب</div></a>
+                    <a href="b4.html" class="card"><span>🦴</span><div class="card-title">استخوان</div></a>
+                    <a href="b5.html" class="card"><span>🫀</span><div class="card-title">قلب</div></a>
+                    <a href="b6.html" class="card"><span>🫁</span><div class="card-title">ریه</div></a>
+                    <a href="b7.html" class="card"><span>🧂</span><div class="card-title">کلیه</div></a>
+                    <a href="b8.html" class="card"><span>🧬</span><div class="card-title">تیروئید</div></a>
+                    <a href="b9.html" class="card"><span>🦷</span><div class="card-title">دندان</div></a>
+                    <a href="b10.html" class="card"><span>👁️</span><div class="card-title">چشم</div></a>
+                    <a href="b11.html" class="card"><span>👂</span><div class="card-title">گوش</div></a>
+                    <a href="b12.html" class="card"><span>👃</span><div class="card-title">بینی</div></a>
+                    <a href="b13.html" class="card"><span>🤲</span><div class="card-title">پوست</div></a>
+                    <a href="b14.html" class="card"><span>🦵</span><div class="card-title">مفاصل</div></a>
+                    <a href="b15.html" class="card"><span>🧠</span><div class="card-title">میگرن</div></a>
+                    <a href="b16.html" class="card"><span>🩸</span><div class="card-title">خون</div></a>
+                    <a href="b17.html" class="card"><span>🍽️</span><div class="card-title">گوارش</div></a>
+                    <a href="b18.html" class="card"><span>🧴</span><div class="card-title">کبد</div></a>
+                    <a href="b19.html" class="card"><span>🤧</span><div class="card-title">آلرژی</div></a>
+                    <a href="b20.html" class="card"><span>😴</span><div class="card-title">خواب</div></a>
+                    <a href="b21.html" class="card"><span>🧘</span><div class="card-title">استرس</div></a>
+                    <a href="b22.html" class="card"><span>😔</span><div class="card-title">افسردگی</div></a>
+                    <a href="b23.html" class="card"><span>👶</span><div class="card-title">کودکان</div></a>
+                    <a href="b24.html" class="card"><span>🧓</span><div class="card-title">سالمندان</div></a>
+                    <a href="b25.html" class="card"><span>🚺</span><div class="card-title">زنان</div></a>
+                    <a href="b26.html" class="card"><span>🚹</span><div class="card-title">مردان</div></a>
+                    <a href="b27.html" class="card"><span>🦠</span><div class="card-title">ایمنی</div></a>
+                    <a href="b28.html" class="card"><span>🤕</span><div class="card-title">درد</div></a>
+                    <a href="b29.html" class="card"><span>🦟</span><div class="card-title">پشه‌زده</div></a>
+                    <a href="b30.html" class="card"><span>🧂</span><div class="card-title">سم‌زدایی</div></a>
+                </div>
+            </div>
+            
+            <!-- بخش گیاهان -->
+            <div class="section" id="herbs-section">
+                <div class="grid-container">
+                    <a href="g1.html" class="card"><span>🌿</span><div class="card-title">زردچوبه</div></a>
+                    <a href="g2.html" class="card"><span>🌿</span><div class="card-title">نعنا</div></a>
+                    <a href="g3.html" class="card"><span>🌿</span><div class="card-title">آویشن</div></a>
+                    <a href="g4.html" class="card"><span>🌿</span><div class="card-title">دارچین</div></a>
+                    <a href="g5.html" class="card"><span>🌿</span><div class="card-title">زنجبیل</div></a>
+                    <a href="g6.html" class="card"><span>🌿</span><div class="card-title">بابونه</div></a>
+                    <a href="g7.html" class="card"><span>🌿</span><div class="card-title">گل‌گاوزبان</div></a>
+                    <a href="g8.html" class="card"><span>🌿</span><div class="card-title">سنبل‌الطیب</div></a>
+                    <a href="g9.html" class="card"><span>🌿</span><div class="card-title">ختمی</div></a>
+                    <a href="g10.html" class="card"><span>🌿</span><div class="card-title">پنیرک</div></a>
+                    <a href="g11.html" class="card"><span>🌿</span><div class="card-title">اسطوخودوس</div></a>
+                    <a href="g12.html" class="card"><span>🌿</span><div class="card-title">مریم‌گلی</div></a>
+                    <a href="g13.html" class="card"><span>🌿</span><div class="card-title">رازیانه</div></a>
+                    <a href="g14.html" class="card"><span>🌿</span><div class="card-title">شنبلیله</div></a>
+                    <a href="g15.html" class="card"><span>🌿</span><div class="card-title">گزنه</div></a>
+                    <a href="g16.html" class="card"><span>🌿</span><div class="card-title">بادرنجبویه</div></a>
+                    <a href="g17.html" class="card"><span>🌿</span><div class="card-title">کاسنی</div></a>
+                    <a href="g18.html" class="card"><span>🌿</span><div class="card-title">خارمریم</div></a>
+                    <a href="g19.html" class="card"><span>🌿</span><div class="card-title">زعفران</div></a>
+                    <a href="g20.html" class="card"><span>🌿</span><div class="card-title">گل‌راعی</div></a>
+                    <a href="g21.html" class="card"><span>🌿</span><div class="card-title">گل‌محمدی</div></a>
+                    <a href="g22.html" class="card"><span>🌿</span><div class="card-title">اکالیپتوس</div></a>
+                    <a href="g23.html" class="card"><span>🌿</span><div class="card-title">پونه</div></a>
+                    <a href="g24.html" class="card"><span>🌿</span><div class="card-title">مرزنجوش</div></a>
+                    <a href="g25.html" class="card"><span>🌿</span><div class="card-title">زرشک</div></a>
+                    <a href="g26.html" class="card"><span>🌿</span><div class="card-title">سنا</div></a>
+                    <a href="g27.html" class="card"><span>🌿</span><div class="card-title">عناب</div></a>
+                    <a href="g28.html" class="card"><span>🌿</span><div class="card-title">پرسیاوشان</div></a>
+                    <a href="g29.html" class="card"><span>🌿</span><div class="card-title">شیرین‌بیان</div></a>
+                    <a href="g30.html" class="card"><span>🌿</span><div class="card-title">بومادران</div></a>
+                    <a href="g31.html" class="card"><span>🌿</span><div class="card-title">پنبه‌گوش</div></a>
+                    <a href="g32.html" class="card"><span>🌿</span><div class="card-title">استخودوس</div></a>
+                    <a href="g33.html" class="card"><span>🌿</span><div class="card-title">کاکوتی</div></a>
+                    <a href="g34.html" class="card"><span>🌿</span><div class="card-title">خارخاسک</div></a>
+                    <a href="g35.html" class="card"><span>🌿</span><div class="card-title">پونه کوهی</div></a>
+                    <a href="g36.html" class="card"><span>🌿</span><div class="card-title">شاهتره</div></a>
+                    <a href="g37.html" class="card"><span>🌿</span><div class="card-title">فلوس</div></a>
+                    <a href="g38.html" class="card"><span>🌿</span><div class="card-title">افتیمون</div></a>
+                    <a href="g39.html" class="card"><span>🌿</span><div class="card-title">اسفرزه</div></a>
+                    <a href="g40.html" class="card"><span>🌿</span><div class="card-title">کندر</div></a>
+                    <a href="g41.html" class="card"><span>🌿</span><div class="card-title">مورد</div></a>
+                    <a href="g42.html" class="card"><span>🌿</span><div class="card-title">پنج‌انگشت</div></a>
+                    <a href="g43.html" class="card"><span>🌿</span><div class="card-title">زوفا</div></a>
+                    <a href="g44.html" class="card"><span>🌿</span><div class="card-title">شقایق</div></a>
+                    <a href="g45.html" class="card"><span>🌿</span><div class="card-title">سورنجان</div></a>
+                    <a href="g46.html" class="card"><span>🌿</span><div class="card-title">کاسنی</div></a>
+                    <a href="g47.html" class="card"><span>🌿</span><div class="card-title">ختمی</div></a>
+                    <a href="g48.html" class="card"><span>🌿</span><div class="card-title">پنیرک</div></a>
+                    <a href="g49.html" class="card"><span>🌿</span><div class="card-title">گل‌پر</div></a>
+                    <a href="g50.html" class="card"><span>🌿</span><div class="card-title">یاس</div></a>
+                </div>
+            </div>
+            
+            <!-- بخش عرقیات (50 نوع) -->
+            <div class="section" id="aragh-section">
+                <div class="grid-container">
+                    <a href="j1.html" class="card"><span>💧</span><div class="card-title">عرق نعنا</div></a>
+                    <a href="j2.html" class="card"><span>💧</span><div class="card-title">عرق بیدمشک</div></a>
+                    <a href="j3.html" class="card"><span>💧</span><div class="card-title">عرق کاسنی</div></a>
+                    <a href="j4.html" class="card"><span>💧</span><div class="card-title">عرق شاهتره</div></a>
+                    <a href="j5.html" class="card"><span>💧</span><div class="card-title">عرق بادرنجبویه</div></a>
+                    <a href="j6.html" class="card"><span>💧</span><div class="card-title">عرق گلاب</div></a>
+                    <a href="j7.html" class="card"><span>💧</span><div class="card-title">عرق نسترن</div></a>
+                    <a href="j8.html" class="card"><span>💧</span><div class="card-title">عرق خارشتر</div></a>
+                    <a href="j9.html" class="card"><span>💧</span><div class="card-title">عرق اسطوخودوس</div></a>
+                    <a href="j10.html" class="card"><span>💧</span><div class="card-title">عرق پونه</div></a>
+                    <a href="j11.html" class="card"><span>💧</span><div class="card-title">عرق زنیان</div></a>
+                    <a href="j12.html" class="card"><span>💧</span><div class="card-title">عرق زیره</div></a>
+                    <a href="j13.html" class="card"><span>💧</span><div class="card-title">عرق آویشن</div></a>
+                    <a href="j14.html" class="card"><span>💧</span><div class="card-title">عرق کاکوتی</div></a>
+                    <a href="j15.html" class="card"><span>💧</span><div class="card-title">عرق گل‌گاوزبان</div></a>
+                    <a href="j16.html" class="card"><span>💧</span><div class="card-title">عرق سنبل‌الطیب</div></a>
+                    <a href="j17.html" class="card"><span>💧</span><div class="card-title">عرق بومادران</div></a>
+                    <a href="j18.html" class="card"><span>💧</span><div class="card-title">عرق ختمی</div></a>
+                    <a href="j19.html" class="card"><span>💧</span><div class="card-title">عرق پنیرک</div></a>
+                    <a href="j20.html" class="card"><span>💧</span><div class="card-title">عرق شنبلیله</div></a>
+                    <a href="j21.html" class="card"><span>💧</span><div class="card-title">عرق زعفران</div></a>
+                    <a href="j22.html" class="card"><span>💧</span><div class="card-title">عرق دارچین</div></a>
+                    <a href="j23.html" class="card"><span>💧</span><div class="card-title">عرق زنجبیل</div></a>
+                    <a href="j24.html" class="card"><span>💧</span><div class="card-title">عرق هل</div></a>
+                    <a href="j25.html" class="card"><span>💧</span><div class="card-title">عرق میخک</div></a>
+                    <a href="j26.html" class="card"><span>💧</span><div class="card-title">عرق گل‌راعی</div></a>
+                    <a href="j27.html" class="card"><span>💧</span><div class="card-title">عرق مرزنجوش</div></a>
+                    <a href="j28.html" class="card"><span>💧</span><div class="card-title">عرق اکالیپتوس</div></a>
+                    <a href="j29.html" class="card"><span>💧</span><div class="card-title">عرق بابونه</div></a>
+                    <a href="j30.html" class="card"><span>💧</span><div class="card-title">عرق رازیانه</div></a>
+                    <a href="j31.html" class="card"><span>💧</span><div class="card-title">عرق شیرین‌بیان</div></a>
+                    <a href="j32.html" class="card"><span>💧</span><div class="card-title">عرق گل‌پر</div></a>
+                    <a href="j33.html" class="card"><span>💧</span><div class="card-title">عرق زوفا</div></a>
+                    <a href="j34.html" class="card"><span>💧</span><div class="card-title">عرق کرفس</div></a>
+                    <a href="j35.html" class="card"><span>💧</span><div class="card-title">عرق جعفری</div></a>
+                    <a href="j36.html" class="card"><span>💧</span><div class="card-title">عرق شوید</div></a>
+                    <a href="j37.html" class="card"><span>💧</span><div class="card-title">عرق گشنیز</div></a>
+                    <a href="j38.html" class="card"><span>💧</span><div class="card-title">عرق کاهو</div></a>
+                    <a href="j39.html" class="card"><span>💧</span><div class="card-title">عرق کدو</div></a>
+                    <a href="j40.html" class="card"><span>💧</span><div class="card-title">عرق خارخاسک</div></a>
+                    <a href="j41.html" class="card"><span>💧</span><div class="card-title">عرق پنبه‌گوش</div></a>
+                    <a href="j42.html" class="card"><span>💧</span><div class="card-title">عرق پنج‌انگشت</div></a>
+                    <a href="j43.html" class="card"><span>💧</span><div class="card-title">عرق مورد</div></a>
+                    <a href="j44.html" class="card"><span>💧</span><div class="card-title">عرق فلوس</div></a>
+                    <a href="j45.html" class="card"><span>💧</span><div class="card-title">عرق افتیمون</div></a>
+                    <a href="j46.html" class="card"><span>💧</span><div class="card-title">عرق اسفرزه</div></a>
+                    <a href="j47.html" class="card"><span>💧</span><div class="card-title">عرق کندر</div></a>
+                    <a href="j48.html" class="card"><span>💧</span><div class="card-title">عرق سورنجان</div></a>
+                    <a href="j49.html" class="card"><span>💧</span><div class="card-title">عرق شقایق</div></a>
+                    <a href="j50.html" class="card"><span>💧</span><div class="card-title">عرق یاس</div></a>
+                </div>
+            </div>
+        </main>
+        
+        <!-- نوار پایینی -->
+        <div class="bottom-nav">
+            <a href="#" class="nav-btn active" onclick="showSection('health')">
+                <span>🏥</span>
+                سلامت
+            </a>
+            <a href="#" class="nav-btn" onclick="showSection('herbs')">
+                <span>🌿</span>
+                گیاهان
+            </a>
+            <a href="#" class="nav-btn" onclick="showSection('aragh')">
+                <span>💧</span>
+                عرقیات
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        // نمایش پیام همگانی
+        function showAnnouncement(message) {
+            const box = document.getElementById('announcement-box');
+            const text = document.getElementById('announcement-text');
+            text.innerHTML = message;
+            box.style.display = 'block';
+        }
+        
+        // مخفی کردن پیام
+        function hideAnnouncement() {
+            document.getElementById('announcement-box').style.display = 'none';
+        }
+        
+        // تغییر بخش‌ها
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(`${sectionId}-section`).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+        
+        // نمایش پیام از فایل مخفی (m.html)
+        fetch('m.html')
+            .then(response => response.text())
+            .then(text => {
+                if(text.trim().length > 0) {
+                    showAnnouncement(text);
+                }
+            })
+            .catch(error => console.log('فایل پیام یافت نشد'));
+    </script>
+</body>
+</html>
